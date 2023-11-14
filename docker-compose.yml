@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+      
+  db1:
+    container_name: database1
+    build: ./database1
+    environment:
+      MYSQL_ROOT_PASSWORD: simone
+    volumes:
+      - ./mysql1:/var/lib/mysql
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+
+  db2:
+    container_name: database2
+    build: ./database2
+    environment:
+      MYSQL_ROOT_PASSWORD: simone
+    volumes:
+      - ./mysql2:/var/lib/mysql
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
